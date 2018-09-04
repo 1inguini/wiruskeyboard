@@ -1,11 +1,11 @@
 ;トグルキー準備
 
   flag := 0
-
+  F := 0
   SPf := 0
 *AppsKey::
   SetKeyDelay -1
-  Send, {F14 DownTemp}
+  F := 1
   SPf := 1
 Return
 *AppsKey Up::
@@ -17,7 +17,7 @@ Return
     Send, {Blind}{F14 Up}{Space}
   }Else{
     SetKeyDelay -1
-    Send, {Blind}{F14 Up}
+    F := 0
     flag := 0
   }
 SPf := 0
@@ -26,7 +26,7 @@ Return
  ;一段目
 
 *7::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send {>}
   }Else{
@@ -37,7 +37,7 @@ Return
 Return
 
 *8::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {Blind}{5}
@@ -58,7 +58,7 @@ Return
 Return
 
 *9::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {/}
@@ -79,7 +79,7 @@ Return
 Return
 
 *0::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {)}
@@ -100,7 +100,7 @@ Return
 Return
 
 *-::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {vkBCsc033}
@@ -121,7 +121,7 @@ Return
 Return
 
 *^::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {}}
@@ -142,7 +142,7 @@ Return
 Return
 
 *\::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {vkBBsc027}
@@ -165,7 +165,7 @@ Return
 ;二段目
 
 *u::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{j}
   }Else{
@@ -176,7 +176,7 @@ Return
 Return
 
 *i::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{q}
   }Else{
@@ -187,7 +187,7 @@ Return
 Return
 
 *o::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{g}
   }Else{
@@ -198,7 +198,7 @@ Return
 Return
 
 *p::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{x}
   }Else{
@@ -209,7 +209,7 @@ Return
 Return
 
 *@::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{f}
   }Else{
@@ -220,7 +220,7 @@ Return
 Return
 
 *[::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{m}
   }Else{
@@ -233,7 +233,7 @@ Return
 ;三段目
 
 *h::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{p}
   }Else{
@@ -244,7 +244,7 @@ Return
 Return
 
 *j::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{w}
   }Else{
@@ -255,7 +255,7 @@ Return
 Return
 
 *k::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{v}
   }Else{
@@ -266,7 +266,7 @@ Return
 Return
 
 *l::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{z}
   }Else{
@@ -277,7 +277,7 @@ Return
 Return
 
 *vkBB::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{y}
   }Else{
@@ -288,7 +288,7 @@ Return
 Return
 
 *vkBA::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{n}
   }Else{
@@ -299,7 +299,7 @@ Return
 Return
 
 *]::
-  if var Getkeystate("F14"){
+  if(F = 1){
     SetKeyDelay -1
     Send, {Blind}{r}
   }Else{
@@ -312,7 +312,7 @@ Return
 ;四段目
 
 *n::
-  if var Getkeystate("F14"){
+  if(F = 1){
   if (Shf = 1){
     SetKeyDelay -1
     Send, {}
@@ -333,7 +333,7 @@ Return
 Return
 
 *m::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {\}
@@ -354,7 +354,7 @@ Return
 Return
 
 *,::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(Shf = 1){
       }Else{
         SetKeyDelay -1
@@ -373,7 +373,7 @@ Return
 Return
 
 *.::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(Shf = 1){
       }Else{
         SetKeyDelay -1
@@ -392,7 +392,7 @@ Return
 Return
 
 */::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {0}
@@ -414,7 +414,7 @@ Return
 
 Tabf := 0  /*flag to make tab work when the key is released*/
 *vkE2::
-  if var Getkeystate("F14"){
+  if(F = 1){
     Enf := 1
   }Else{
     SetKeyDelay -1
@@ -439,7 +439,7 @@ Return
 Return
 
 *RShift::
-  if var Getkeystate("F14"){
+  if(F = 1){
     if(HZf = 0){
       SetKeyDelay -1
       Send, {vkF3sc029}
@@ -470,7 +470,7 @@ Return
  ;最終段
 
 *vk1C::
-  if var Getkeystate("F14"){
+  if(F = 1){
     Send, {Blind}{vk1Dsc07B}
   }Else{
     Send, {Blind}{vk1Csc079}
@@ -502,7 +502,7 @@ Return
 Return
 
 *RControl::
-  if var Getkeystate("F14"){
+  if(F = 1){
     Send, {Blind}{Del}
   }Else{
     Send, {Blind}{BS}
