@@ -1,32 +1,37 @@
-;トグルキー準備
 
+
+
+
+
+;トグルキー準備
+  Tabf := 0  /*flag to make tab work when the key is released*/
   flag := 0
-  F := 0
   SPf := 0
+
 *AppsKey::
   SetKeyDelay -1
-  F := 1
   SPf := 1
+  flag := 0
 Return
 *AppsKey Up::
   if(Tabf = 1){
     SetKeyDelay -1
-    Send, {Blind}{F14 Up}{Tab}
-  }Else  if (flag = 0){
+    Send, {Blind}{RShift Up}{Tab}
+    }Else  if (flag = 0){
     SetKeyDelay -1
-    Send, {Blind}{F14 Up}{Space}
+    Send, {Blind}{Space}
   }Else{
     SetKeyDelay -1
-    F := 0
+
     flag := 0
   }
-SPf := 0
-Return
+  SPf := 0
+return
 
- ;一段目
+;一段目
 
 *7::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send {>}
   }Else{
@@ -37,7 +42,7 @@ Return
 Return
 
 *8::
-  if(F = 1){
+  if(SPf = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {Blind}{5}
@@ -58,7 +63,7 @@ Return
 Return
 
 *9::
-  if(F = 1){
+  if(SPf = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {/}
@@ -79,7 +84,7 @@ Return
 Return
 
 *0::
-  if(F = 1){
+  if(SPf = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {)}
@@ -93,14 +98,15 @@ Return
       Send, {'}
     }Else{
       SetKeyDelay -1
-      Send, {"}
+      Send, {Shift Down}{2}{Shift Up}
     }
   }
   flag := 1
 Return
 
+
 *-::
-  if(F = 1){
+  if(SPf = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {vkBCsc033}
@@ -108,10 +114,10 @@ Return
       SetKeyDelay -1
       Send, {.}
     }
-  }Else{
+    }Else{
     if(Shf = 1){
       SetKeyDelay -1
-      Send, {!}
+    Send, {!}
     }Else{
       SetKeyDelay -1
       Send, {?}
@@ -121,7 +127,7 @@ Return
 Return
 
 *^::
-  if(F = 1){
+  if(SPf = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {}}
@@ -142,7 +148,7 @@ Return
 Return
 
 *\::
-  if(F = 1){
+  if(SPf = 1){
     if (Shf = 1){
       SetKeyDelay -1
       Send, {vkBBsc027}
@@ -165,9 +171,10 @@ Return
 ;二段目
 
 *u::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{j}
+
   }Else{
     SetKeyDelay -1
     Send, {Blind}{b}
@@ -176,7 +183,7 @@ Return
 Return
 
 *i::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{q}
   }Else{
@@ -187,7 +194,7 @@ Return
 Return
 
 *o::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{g}
   }Else{
@@ -198,7 +205,7 @@ Return
 Return
 
 *p::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{x}
   }Else{
@@ -209,7 +216,7 @@ Return
 Return
 
 *@::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{f}
   }Else{
@@ -220,7 +227,7 @@ Return
 Return
 
 *[::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{m}
   }Else{
@@ -233,7 +240,7 @@ Return
 ;三段目
 
 *h::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{p}
   }Else{
@@ -244,7 +251,7 @@ Return
 Return
 
 *j::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{w}
   }Else{
@@ -255,7 +262,7 @@ Return
 Return
 
 *k::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{v}
   }Else{
@@ -266,7 +273,7 @@ Return
 Return
 
 *l::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{z}
   }Else{
@@ -277,7 +284,7 @@ Return
 Return
 
 *vkBB::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{y}
   }Else{
@@ -288,7 +295,7 @@ Return
 Return
 
 *vkBA::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{n}
   }Else{
@@ -299,7 +306,7 @@ Return
 Return
 
 *]::
-  if(F = 1){
+  if(SPf = 1){
     SetKeyDelay -1
     Send, {Blind}{r}
   }Else{
@@ -312,7 +319,7 @@ Return
 ;四段目
 
 *n::
-  if(F = 1){
+  if(SPf = 1){
   if (Shf = 1){
     SetKeyDelay -1
     Send, {}
@@ -333,7 +340,7 @@ Return
 Return
 
 *m::
-  if(F = 1){
+  if(SPf = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {\}
@@ -354,7 +361,7 @@ Return
 Return
 
 *,::
-  if(F = 1){
+  if(SPf = 1){
     if(Shf = 1){
       }Else{
         SetKeyDelay -1
@@ -373,7 +380,7 @@ Return
 Return
 
 *.::
-  if(F = 1){
+  if(SPf = 1){
     if(Shf = 1){
       }Else{
         SetKeyDelay -1
@@ -392,7 +399,7 @@ Return
 Return
 
 */::
-  if(F = 1){
+  if(SPf = 1){
     if(Shf = 1){
       SetKeyDelay -1
       Send, {0}
@@ -412,9 +419,9 @@ Return
         flag := 1
 Return
 
-Tabf := 0  /*flag to make tab work when the key is released*/
+
 *vkE2::
-  if(F = 1){
+  if(SPf = 1){
     Enf := 1
   }Else{
     SetKeyDelay -1
@@ -438,8 +445,10 @@ Return
   }
 Return
 
+HZf := 0
+
 *RShift::
-  if(F = 1){
+  if(SPf = 1){
     if(HZf = 0){
       SetKeyDelay -1
       Send, {vkF3sc029}
@@ -470,7 +479,7 @@ Return
  ;最終段
 
 *vk1C::
-  if(F = 1){
+  if(SPf = 1){
     Send, {Blind}{vk1Dsc07B}
   }Else{
     Send, {Blind}{vk1Csc079}
@@ -485,24 +494,21 @@ Return
   Shf := 1
   flag := 1
 Return
+
 *RWin Up::
-  if(Tabf = 1){
-    Tabf := 0
-  }
-  if(Shf = 1){
-    SetKeyDelay -1
-    Send, {Blind}{RShift Up}
-    Shf := 0
-  }
+  SetKeyDelay -1
+  Send, {Blind}{RShift Up}
+  Shf := 0
   if(SPf = 0){
     flag := 0
   }Else{
     flag := 1
   }
+  Tabf := 0
 Return
 
 *RControl::
-  if(F = 1){
+  if(SPf = 1){
     Send, {Blind}{Del}
   }Else{
     Send, {Blind}{BS}
